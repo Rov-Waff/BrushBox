@@ -109,7 +109,7 @@ class Ui_BrushBoxGUI(object):
     # setupUi
 
     def retranslateUi(self, BrushBoxGUI):
-        BrushBoxGUI.setWindowTitle(QCoreApplication.translate("BrushBoxGUI", u"Dialog", None))
+        BrushBoxGUI.setWindowTitle(QCoreApplication.translate("BrushBoxGUI", u"BrushBox", None))
         self.label.setText(QCoreApplication.translate("BrushBoxGUI", u"Token", None))
         self.label_3.setText(QCoreApplication.translate("BrushBoxGUI", u"\u5185\u5bb9", None))
         self.label_2.setText(QCoreApplication.translate("BrushBoxGUI", u"\u7fa4ID", None))
@@ -117,3 +117,11 @@ class Ui_BrushBoxGUI(object):
         self.btn_dojob.setText(QCoreApplication.translate("BrushBoxGUI", u"\u8fdb\u884c", None))
     # retranslateUi
 
+if __name__ == "__main__":
+    import sys
+    app = QApplication(sys.argv)
+    BrushBoxGUI = QDialog()
+    ui = Ui_BrushBoxGUI()
+    ui.setupUi(BrushBoxGUI)
+    BrushBoxGUI.show()
+    sys.exit(app.exec())
