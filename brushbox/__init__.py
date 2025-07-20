@@ -1,6 +1,7 @@
 import requests
 import pprint
 import json
+from .TokenExcecpion import TokenException
 
 def send_message(token,content,group_id):
     r=requests.request(
@@ -19,4 +20,5 @@ def send_message(token,content,group_id):
         }),
         url="https://www.boxim.online/api/message/group/send"
     )
-    pprint.pprint(json.loads(r.content))
+    if json.loads(r.content)['code']==401:
+        raise TokenException
