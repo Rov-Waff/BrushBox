@@ -19,3 +19,4 @@ def send_message(token,content,group_id):
         }),
         url="https://www.boxim.online/api/message/group/send"
     )
+    pprint.pprint(json.loads(r.content))
