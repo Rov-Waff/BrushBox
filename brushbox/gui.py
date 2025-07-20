@@ -1,5 +1,5 @@
 from .ui_BrushBoxGUI import Ui_BrushBoxGUI
-from PySide6.QtWidgets import QApplication, QDialog
+from PySide6.QtWidgets import QApplication, QDialog,QMessageBox
 from PySide6.QtCore import QCoreApplication
 from .TokenExcecpion import TokenException
 import brushbox
@@ -21,8 +21,10 @@ class BrushBoxGUI(QDialog, Ui_BrushBoxGUI):
                 self.pb_process.setValue((i + 1) * 100 // times)
         except TokenException:
             print("[Error] Token过期")
+            QMessageBox.critical(self, "Error", "Token 过期")
         except Exception as e:
             print(f"[Error] {e}")
+            QMessageBox.critical(self, "Error", f"发生错误: {e}")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
