@@ -116,12 +116,3 @@ class Ui_BrushBoxGUI(object):
         self.label_4.setText(QCoreApplication.translate("BrushBoxGUI", u"\u6b21\u6570", None))
         self.btn_dojob.setText(QCoreApplication.translate("BrushBoxGUI", u"\u8fdb\u884c", None))
     # retranslateUi
-
-if __name__ == "__main__":
-    import sys
-    app = QApplication(sys.argv)
-    BrushBoxGUI = QDialog()
-    ui = Ui_BrushBoxGUI()
-    ui.setupUi(BrushBoxGUI)
-    BrushBoxGUI.show()
-    sys.exit(app.exec())
