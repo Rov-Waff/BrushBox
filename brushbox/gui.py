@@ -11,6 +11,7 @@ class BrushBoxGUI(QDialog, Ui_BrushBoxGUI):
         self.setupUi(self)
         self.btn_dojob.clicked.connect(self.do_job)
     def do_job(self):
+        self.btn_dojob.setEnabled(False)
         token = self.pte_token.toPlainText().strip()
         content = self.pte_content.toPlainText().strip()
         group_id = self.le_group_id.text().strip()
@@ -25,7 +26,7 @@ class BrushBoxGUI(QDialog, Ui_BrushBoxGUI):
         except Exception as e:
             print(f"[Error] {e}")
             QMessageBox.critical(self, "Error", f"发生错误: {e}")
-
+        self.btn_dojob.setEnabled(True)
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = BrushBoxGUI()
